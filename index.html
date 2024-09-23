@@ -37,36 +37,41 @@
         background-color: #23b9eb;
       }
      
-        
-        .popup {
-       /* Hidden by default */
-      position: fixed;
-      z-index: 10;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
-      padding-top: 60px;
-      border-radius: 5px;
-        }
+    .popup {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+   
+}
 
-        .popup-content {
-          background-color: #000506;
-        margin: 5% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 100%;
-        max-width: 600px;
-        }  
-        .popup-content .close-btn {
+.popup-content {
+    background-color: #191919;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px; /* Adjust width as needed */
+    max-height: 90vh; /* Limit popup height to 80% of viewport */
+    position: relative;
+    border-radius: 5px;
+    overflow-y: auto; /* Allow scrolling if content exceeds max height */
+}
+.hidden {
+    display: none; /* Hides the element */
+}
+
+         .close-btn {
             cursor: pointer;
             font-size: 24px;
             position: relative;
             display: flex;
             }
+          
     </style>
     <script src="portfolio/matter.js" defer></script>
   </head>
@@ -234,43 +239,50 @@
           </div>
         </div>
         <div id="aboutPopup" class="popup hidden">
-          <div class="popup-content">
-              <span id="closePopup" class="close-btn">&times;</span>
-              <h4 class="text-3xl   relative z-10 font-bold px-4 py-4 w-max mx-auto text-center  "
-              > About Me</h4>
-              <br>
-
-              <p class="text-1xl text-align text-center">
-                I help business owners and busy web developers to design 
-                develop creative websites that fits their vision and attracts
-                the visitors to stay for ever. Technologies and tools that I use
-                to create such awesome websites.
-              </p>
-              <br>
-
-              <ul class="flex flex-wrap gap-4 mt-2 center text-align">
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#javascript</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#react.js</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#redux</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#node.js</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#express.js</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#mongoDB</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#mongoose</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#cloudinary</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#ejs</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#html</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#css</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#sass</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#bootstrap</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#tailwind</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#git</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#github</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#aws</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#terminal</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#adobeXD</li>
-                <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#figma</li>
-              </ul>
+          <div class="popup-content flex flex-col md:flex-row justify-between ">
+              <!-- Text content -->
+              <div class="w-full md:w-7/10 px-4 py-4">
+                  <span id="closePopup" class="close-btn">&times;</span>
+                  <h4 class="text-3xl relative z-10 font-bold w-max mx-auto text-center ">About Me</h4>
+                  <br>
+      
+                  <p class="text-center text-align flex">
+                    𝑯𝒆𝒍𝒍𝒐!
+                    𝑰 𝒂𝒎 𝑴𝒐𝒉𝒅 𝑴𝒖𝒋𝒕𝒂𝒃𝒂 𝑸𝒖𝒓𝒆𝒔𝒉𝒊, 𝒂 𝑫𝒆𝒗𝑶𝒑𝒔 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓. 𝑰 𝒉𝒂𝒗𝒆 𝒄𝒐𝒎𝒑𝒍𝒆𝒕𝒆𝒅 𝒎𝒚 𝑩.𝑻𝒆𝒄𝒉 𝒊𝒏 𝑪𝒐𝒎𝒑𝒖𝒕𝒆𝒓 𝑺𝒄𝒊𝒆𝒏𝒄𝒆 𝒂𝒏𝒅 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝒇𝒓𝒐𝒎 𝑺𝒉𝒂𝒅𝒂𝒏 𝑪𝒐𝒍𝒍𝒆𝒈𝒆 𝒐𝒇 𝑬𝒏𝒈𝒊𝒏𝒆𝒆𝒓𝒊𝒏𝒈 𝒂𝒏𝒅 𝑻𝒆𝒄𝒉𝒏𝒐𝒍𝒐𝒈𝒚, 𝑯𝒚𝒅𝒆𝒓𝒂𝒃𝒂𝒅. 𝑴𝒚 𝒆𝒙𝒑𝒆𝒓𝒕𝒊𝒔𝒆 𝒍𝒊𝒆𝒔 𝒊𝒏 𝑨𝑾𝑺 𝒊𝒏𝒇𝒓𝒂𝒔𝒕𝒓𝒖𝒄𝒕𝒖𝒓𝒆, 𝑫𝒐𝒄𝒌𝒆𝒓, 𝑲𝒖𝒃𝒆𝒓𝒏𝒆𝒕𝒆𝒔, 𝒂𝒏𝒅 𝑪𝑰/𝑪𝑫 𝒑𝒊𝒑𝒆𝒍𝒊𝒏𝒆𝒔 𝒖𝒔𝒊𝒏𝒈 𝑱𝒆𝒏𝒌𝒊𝒏𝒔, 𝑻𝒆𝒓𝒓𝒂𝒇𝒐𝒓𝒎, 𝒂𝒏𝒅 𝑨𝒏𝒔𝒊𝒃𝒍𝒆. 𝑴𝒚 𝒑𝒂𝒔𝒔𝒊𝒐𝒏 𝒊𝒔 𝒇𝒐𝒄𝒖𝒔𝒆𝒅 𝒐𝒏 𝒂𝒖𝒕𝒐𝒎𝒂𝒕𝒊𝒏𝒈 𝒘𝒐𝒓𝒌𝒇𝒍𝒐𝒘𝒔 𝒕𝒐 𝒐𝒑𝒕𝒊𝒎𝒊𝒛𝒆 𝒆𝒇𝒇𝒊𝒄𝒊𝒆𝒏𝒄𝒚.
+    
+                    𝑰’𝒗𝒆 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒅 𝒂 𝑷𝒚𝒕𝒉𝒐𝒏-𝒃𝒂𝒔𝒆𝒅 𝒎𝒐𝒏𝒊𝒕𝒐𝒓𝒊𝒏𝒈 𝒕𝒐𝒐𝒍 𝒕𝒉𝒂𝒕 𝒂𝒖𝒕𝒐𝒎𝒂𝒕𝒆𝒔 𝒘𝒆𝒃𝒔𝒊𝒕𝒆 𝒓𝒆𝒄𝒐𝒗𝒆𝒓𝒚 𝒂𝒏𝒅 𝒉𝒂𝒗𝒆 𝒘𝒐𝒓𝒌𝒆𝒅 𝒐𝒏 𝒔𝒆𝒄𝒖𝒓𝒆 𝒄𝒍𝒐𝒖𝒅-𝒊𝒏𝒕𝒆𝒈𝒓𝒂𝒕𝒆𝒅 𝑱𝒂𝒗𝒂 𝒂𝒑𝒑𝒍𝒊𝒄𝒂𝒕𝒊𝒐𝒏𝒔. 𝑰'𝒎 𝒂𝒍𝒘𝒂𝒚𝒔 𝒆𝒙𝒑𝒍𝒐𝒓𝒊𝒏𝒈 𝒏𝒆𝒘 𝒘𝒂𝒚𝒔 𝒕𝒐 𝒔𝒐𝒍𝒗𝒆 𝒄𝒐𝒎𝒑𝒍𝒆𝒙 𝒕𝒆𝒄𝒉𝒏𝒊𝒄𝒂𝒍 𝒄𝒉𝒂𝒍𝒍𝒆𝒏𝒈𝒆𝒔 𝒂𝒏𝒅 𝒆𝒏𝒉𝒂𝒏𝒄𝒆 𝒑𝒓𝒐𝒅𝒖𝒄𝒕𝒊𝒗𝒊𝒕𝒚.
+                  </p>
+      
+                  <ul class="flex flex-wrap gap-1 mt-2 text-center">
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Linux</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Git</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#GitLab</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Jenkins</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Amazon web services</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Docker</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Kubernetes</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#SonarQube</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Trivy</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Ansible</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Terraform</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Prometheus</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#grafana</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Python</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Jira</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#Shell Scripting</li>   
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#html</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#css</li>
+                    <li class="border rounded-[50px] border-[#999] px-[10px] py-[5px] text-sm md:text-base">#JavaScript</li>
+                    
+                  </ul>
+              </div>
+      
+              <!-- Image content -->
+              <div class="w-full md:w-8/10 px-4 py-4 flex items-center justify-center">
+                  <img src="portfolio/assets/images/coder.svg" alt="About Me Image" class="rounded-lg max-w-full h-auto" />
+              </div>
           </div>
+      </div>
       </div>
       
         <ul class="ml-auto space-y-6 text-[#b0b2c3] absolute right-8">
