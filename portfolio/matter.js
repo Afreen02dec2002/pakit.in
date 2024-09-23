@@ -1,3 +1,28 @@
+
+
+// JavaScript for Modal functionality
+var modal = document.getElementById("aboutModal");
+var btn = document.getElementById("aboutBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Existing Matter.js code (add it here or after the modal script)
 var canvas = document.querySelector("#wrapper-canvas");
 
 var dimensions = {
@@ -211,3 +236,8 @@ function setWindowSize() {
 let m = runMatter();
 setWindowSize();
 $(window).resize(debounce(setWindowSize, 250));
+
+
+function scrollToProject() {
+  document.getElementById("Project").scrollIntoView({ behavior: "smooth" });
+}
